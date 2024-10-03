@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Áudio</title>
+    <title>Amostra</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100%;
-        }
-        
-        .container {
-            width: 80%;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
         }
 
         .item {
-            width: 30%;
             text-align: center;
-            margin-bottom: 20px;
         }
 
         .item img {
             width: 100%;
+            height: auto;
+            max-height: 150px;
             border-radius: 8px;
+            object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -52,14 +54,24 @@
         }
 
         @media (max-width: 768px) {
-            .item {
-                width: 45%;
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
             }
         }
 
         @media (max-width: 480px) {
-            .item {
-                width: 100%;
+            .container {
+                grid-template-columns: 1fr; /* 1 coluna em celulares */
+            }
+
+            .item img {
+                max-height: 120px; /* Reduz o tamanho das imagens em telas pequenas */
+            }
+        }
+
+        @media (max-height: 500px) {
+            .item img {
+                max-height: 100px; /* Ajusta a altura da imagem para telas muito pequenas */
             }
         }
     </style>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Áudio Responsiva</title>
+    <title>Amostra</title>
     <style>
         body, html {
             margin: 0;
@@ -65,13 +65,13 @@
             }
 
             .item img {
-                max-height: 120px; /* Reduz o tamanho das imagens em telas pequenas */
+                max-height: 120px; 
             }
         }
 
         @media (max-height: 500px) {
             .item img {
-                max-height: 100px; /* Ajusta a altura da imagem para telas muito pequenas */
+                max-height: 100px; 
             }
         }
     </style>
@@ -81,41 +81,40 @@
         <!-- Imagem 1 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 1">
-            <button onclick="playAudio('audio1.mp3')">Tocar Áudio 1</button>
+            <button onclick="playAudio('audio1.mp3')">Tocar</button>
         </div>
 
         <!-- Imagem 2 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 2">
-            <button onclick="playAudio('audio2.mp3')">Tocar Áudio 2</button>
+            <button onclick="playAudio('audio2.mp3')">Tocar</button>
         </div>
 
         <!-- Imagem 3 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 3">
-            <button onclick="playAudio('audio3.mp3')">Tocar Áudio 3</button>
+            <button onclick="playAudio('audio3.mp3')">Tocar</button>
         </div>
 
         <!-- Imagem 4 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 4">
-            <button onclick="playAudio('audio4.mp3')">Tocar Áudio 4</button>
+            <button onclick="playAudio('audio4.mp3')">Tocar</button>
         </div>
 
         <!-- Imagem 5 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 5">
-            <button onclick="playAudio('audio5.mp3')">Tocar Áudio 5</button>
+            <button onclick="playAudio('audio5.mp3')">Tocar</button>
         </div>
 
         <!-- Imagem 6 com botão -->
         <div class="item">
             <img src="https://i.pinimg.com/736x/71/ac/ea/71aceabe7c0fdbad197eb958b6faca90.jpg" alt="Imagem 6">
-            <button onclick="playAudio('audio6.mp3')">Tocar Áudio 6</button>
+            <button onclick="playAudio('audio6.mp3')">Tocar</button>
         </div>
     </div>
 
-    <!-- Player de Áudio (Oculto) -->
     <audio id="audioPlayer"></audio>
 
     <script>

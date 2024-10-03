@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amostra</title>
+    <title>Galeria de Áudio Responsiva</title>
     <style>
         body, html {
             margin: 0;
@@ -23,6 +23,7 @@
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 20px;
             padding: 20px;
+            box-sizing: border-box; /* Para garantir que o padding funcione corretamente */
         }
 
         .item {
@@ -31,10 +32,10 @@
 
         .item img {
             width: 100%;
-            height: auto;
+            height: auto; /* Garantir que a altura seja proporcional à largura */
             max-height: 150px;
             border-radius: 8px;
-            object-fit: cover;
+            object-fit: contain; /* Assegura que a imagem fique inteira, sem cortes */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -62,6 +63,7 @@
         @media (max-width: 480px) {
             .container {
                 grid-template-columns: 1fr; /* 1 coluna em celulares */
+                padding: 20px 10px; /* Reduz o padding lateral em telas muito pequenas */
             }
 
             .item img {

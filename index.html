@@ -23,7 +23,7 @@
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 20px;
             padding: 20px;
-            box-sizing: border-box; /* Para garantir que o padding funcione corretamente */
+            box-sizing: border-box; /* Para garantir que o padding não cause estouro */
         }
 
         .item {
@@ -32,10 +32,9 @@
 
         .item img {
             width: 100%;
-            height: auto; /* Garantir que a altura seja proporcional à largura */
-            max-height: 150px;
+            height: auto;
             border-radius: 8px;
-            object-fit: contain; /* Assegura que a imagem fique inteira, sem cortes */
+            object-fit: cover; /* Preenche o espaço disponível sem deixar bordas brancas */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -63,17 +62,17 @@
         @media (max-width: 480px) {
             .container {
                 grid-template-columns: 1fr; /* 1 coluna em celulares */
-                padding: 20px 10px; /* Reduz o padding lateral em telas muito pequenas */
+                padding: 20px 5px; /* Reduz o padding lateral */
             }
 
             .item img {
-                max-height: 120px; /* Reduz o tamanho das imagens em telas pequenas */
+                max-height: 150px; /* Ajusta a altura das imagens em telas pequenas */
             }
         }
 
         @media (max-height: 500px) {
             .item img {
-                max-height: 100px; /* Ajusta a altura da imagem para telas muito pequenas */
+                max-height: 120px; /* Ajusta a altura da imagem em telas pequenas */
             }
         }
     </style>

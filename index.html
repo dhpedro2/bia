@@ -20,10 +20,11 @@
             width: 100%;
             max-width: 1200px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Define 3 colunas */
+            grid-template-columns: repeat(3, 1fr); /* Define 3 colunas para a primeira linha */
             grid-template-rows: auto auto; /* Define 2 linhas */
             grid-gap: 20px;
             padding: 20px;
+            justify-items: center; /* Centraliza os itens na grade */
         }
 
         .item {
@@ -54,13 +55,12 @@
             background-color: #0056b3;
         }
 
-        /* Centraliza os itens da segunda linha embaixo dos espaços */
-        .item:nth-child(4) {
-            grid-column: 1 / 2; /* Posiciona o quarto item na coluna esquerda */
-        }
-
-        .item:nth-child(5) {
-            grid-column: 3 / 4; /* Posiciona o quinto item na coluna direita */
+        /* Segunda linha com os dois itens centralizados */
+        .second-row {
+            grid-column: span 3; /* Ocupa todas as 3 colunas */
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
 
         @media (max-width: 768px) {
@@ -68,42 +68,46 @@
                 grid-template-columns: 1fr; /* 1 coluna em dispositivos menores */
             }
 
-            .item {
-                grid-column: 1 / -1; /* Itens ocupam largura total em telas pequenas */
+            .item, .second-row {
+                grid-column: 1 / -1; /* Ocupa a largura total */
+            }
+
+            .second-row {
+                flex-direction: column; /* Coloca os itens um abaixo do outro em telas pequenas */
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Imagem 1 com botão -->
+        <!-- Primeira linha com 3 itens -->
         <div class="item">
             <img src="i1.png" alt="Imagem 1">
             <button onclick="playAudio('audio1.mp3')">Tocar</button>
         </div>
 
-        <!-- Imagem 2 com botão -->
         <div class="item">
             <img src="i2.png" alt="Imagem 2">
             <button onclick="playAudio('audio2.mp3')">Tocar</button>
         </div>
 
-        <!-- Imagem 3 com botão -->
         <div class="item">
             <img src="i3.png" alt="Imagem 3">
             <button onclick="playAudio('audio3.mp3')">Tocar</button>
         </div>
 
-        <!-- Imagem 4 com botão -->
-        <div class="item">
-            <img src="i4.png" alt="Imagem 4">
-            <button onclick="playAudio('audio4.mp3')">Tocar</button>
-        </div>
+        <!-- Segunda linha com 2 itens centralizados -->
+        <div class="second-row">
+            <div class="item">
+                <img src="i4.png" alt="Imagem 4">
+                <button onclick="playAudio('audio4.mp3')">Tocar</button>
+            </div>
 
-        <!-- Imagem 5 com botão -->
-        <div class="item">
-            <img src="i5.png" alt="Imagem 5">
-            <button onclick="playAudio('audio5.mp3')">Tocar</button>
+            <div class="item">
+                <img src="i5.png" alt="Imagem 5">
+                <button onclick="playAudio('audio5.mp3')">Tocar</button>
+            </div>
         </div>
     </div>
 

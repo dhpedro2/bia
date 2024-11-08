@@ -24,7 +24,6 @@
             grid-template-rows: auto auto; /* Define 2 linhas */
             grid-gap: 20px;
             padding: 20px;
-            justify-content: center; /* Centraliza os blocos na segunda linha */
         }
 
         .item {
@@ -56,12 +55,9 @@
         }
 
         /* Posiciona os itens da segunda linha no centro */
-        .item:nth-child(4) {
-            grid-column: 2 / 3; /* Coloca o item 4 na coluna central */
-        }
-
+        .item:nth-child(4),
         .item:nth-child(5) {
-            grid-column: 3 / 4; /* Coloca o item 5 na coluna central */
+            grid-column: 2 / 3; /* Coloca os itens 4 e 5 na coluna central */
         }
 
         @media (max-width: 768px) {
